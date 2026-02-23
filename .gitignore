@@ -6,3 +6,8 @@ debug
 foo.*
 *.log
 data
+
+# Claude / worktrees
+.claude/
+CLAUDE.md
+.worktrees/

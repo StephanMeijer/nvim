@@ -1,0 +1,32 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0
+    hooks:
+      - id: trailing-whitespace
+        exclude: lazy-lock\.json$
+      - id: end-of-file-fixer
+        exclude: lazy-lock\.json$
+      - id: check-merge-conflict
+      - id: mixed-line-ending
+        args: [--fix=lf]
+        exclude: lazy-lock\.json$
+
+  - repo: https://github.com/gitleaks/gitleaks
+    rev: v8.30.0
+    hooks:
+      - id: gitleaks
+
+  - repo: https://github.com/editorconfig-checker/editorconfig-checker.python
+    rev: 3.6.0
+    hooks:
+      - id: editorconfig-checker
+        exclude: lazy-lock\.json$
+
+  - repo: local
+    hooks:
+      - id: just-check
+        name: just check (fmt + lint + secrets)
+        entry: just check
+        language: system
+        pass_filenames: false
+        always_run: true
