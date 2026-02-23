@@ -1,0 +1,10 @@
+std = "lua51+vim"
+
+[lints]
+mixed_table = "allow" # lazy.nvim plugin specs are always mixed tables by design
+shadowing = "allow"
+high_cyclomatic_complexity = "warn"
+
+[config]
+unused_variable = { allow_unused_self = true, ignore_pattern = "^_" }
+high_cyclomatic_complexity = { maximum_complexity = 30 }
